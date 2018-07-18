@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Applicant Details</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <script src="app.js"></script>
+</head>
+<body ng-app="myModule" ng-controller="myControllerStudent">
+</br>
+<div class="container-fluid" style="border-style: solid; width: 1300px;">
+    <br>
+    <input type="image" src="Images/back.png" ng-click="Back()" style="float: left;" width="50" height="50"/>
+		<center><p style="font-family: cursive;font-style: normal;font-size: x-large;">Digital Identification Request</p></center>
+	<div class="container-fluid" style="border-style: solid;">
+	</br>
+		<div class="row">
+			<div class="col">
+			  <label for="name"><i><b>Legal Name :</b></i></label>
+			  <input type="text" class="form-control" id="name" ng-model="selectedApplicantData.name" disabled>
+			</div>
+			<div class="col">
+			  <label for="ssn"><i><b>SSN :</b></i></label>
+			  <input type="text" class="form-control" id="ssn" ng-model="selectedApplicantData.ssn" disabled>
+			</div>
+			<div class="col">
+			  <label for="date"><i><b>Date Of Birth (mm/dd/yyyy) :</b></i></label>
+			  <input type="date" class="form-control" id="date" ng-model="dateOfBirth" disabled>		
+			</div>
+		</div>
+		</br>
+		<div class="row">
+			<div class="col">
+			  <label for="gender"><i><b>Gender :</b></i></label>
+			   <br>
+			   <div class="form-check-inline">
+					   <label class="form-check-label" for="radio1">
+					   <input type="radio" class="form-check-input" ng-model="selectedApplicantData.gender" value="Male" disabled>Male
+					   </label>
+			   </div>
+			   <div class="form-check-inline">
+					   <label class="form-check-label" for="radio2">
+					   <input type="radio" class="form-check-input" ng-model="selectedApplicantData.gender" value="Female" disabled>Female
+					   </label>
+			   </div>
+			</div>
+			<div class="col">
+			  <label for="email"><i><b>Email :</b></i></label>
+			  <input type="text" class="form-control" id="email" ng-model="selectedApplicantData.email" disabled>
+			</div>
+			<div class="col" style="margin-right: -300px;">
+			  <label for="countryCode"><i><b>Code :</b></i></label>
+			  <input type="text" class="form-control" id="countryCode" style="width: 3em;" ng-model="selectedApplicantData.countryCode" disabled>
+			</div>
+			<div class="col">
+			  <label for="phoneNumber"><i><b>Phone Number :</b></i></label>
+			  <input type="text" class="form-control" style="width: 20em;" id="phoneNumber" ng-model="selectedApplicantData.phoneNumber" disabled>
+			</div>
+		</div>
+		</br>
+		<div class="row">
+			<div class="col">
+			  <label for="address"><i><b>Address :</b></i></label>
+			  <input type="text" class="form-control" id="address" ng-model="selectedApplicantData.address" disabled>
+			</div>
+			<div class="col">
+				<label for="upload"><i><b>Download Photo Id Proof :</b></i></label>
+				<br>
+			  <b><a href="#">{{attachment}}</a></b>
+			</div>
+		</div>
+		</br></br>
+	<center>
+		<div class="btn-group">
+		<button type="button" class="btn btn-primary" ng-click="updateStatus('Approved')">Approve</button>
+		</div>
+		<div class="btn-group">
+			<button type="button" class="btn btn-primary" ng-click="updateStatus('Rejected')">Reject</button>
+		</div>
+	</center>
+	</br></br>
+	</div>
+	</br></br>
+</div>	
+</body>
+</html>
