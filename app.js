@@ -22,7 +22,7 @@ myApp.controller('myControllerLogin', ['$scope', '$http', '$window', function($s
 		   data: data  
 		}).then(function successCallback(response) {
 			if(JSON.stringify(response) != '{}' && response.data.status == "200"){
-					window.location.href = './requestTable.html';
+					window.location.href = '/requestTable.html';
 			}else{
 				alert(response.data.message);
 			}				
@@ -76,6 +76,10 @@ myApp.controller('myControllerRequest', ['$scope', '$http', '$window', function(
 }]);
 
 myApp.controller('myControllerStudent', ['$scope', '$http', '$window', function($scope,$http,$window){
+
+    $scope.Back = function() {
+        $window.location.href = '/requestTable.html';        
+    }
 
 	$scope.selectedApplicantData = JSON.parse($window.sessionStorage.getItem("Mydata"));
 	$scope.attachment = Object.keys($scope.selectedApplicantData._attachments)[0];
